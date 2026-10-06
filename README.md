@@ -204,6 +204,38 @@ python -m pytest
 Tests cover chunk detection and metadata, retrieval thresholds and filters,
 LangGraph routing, context construction, CLI progress, and expected errors.
 
+## Future improvements
+
+The project intentionally remains a basic, single-turn RAG workflow. Possible
+future improvements, in suggested implementation order, are:
+
+1. Add a `search` command that displays retrieved chunks, metadata, and distance
+   scores without calling the LLM.
+2. Expose `top-k`, `max-distance`, and `source` filters as CLI options.
+3. Add `ingest --rebuild` so the local Chroma index can be recreated without
+   manually removing `data/chroma/`.
+4. Generate deterministic chunk IDs from the source, unit index, and chunk
+   index to prevent duplicate records.
+5. Require inline source and page citations in generated answers.
+6. Add a small JSONL evaluation runner for retrieval hits, expected answer
+   keywords, and correct fallback behavior.
+7. Include out-of-scope evaluation questions to measure hallucination
+   prevention and conditional routing.
+8. Print ingestion statistics such as PDFs parsed, semantic units created,
+   chunks generated, and records indexed.
+9. Add a `status` command that reports the collection name, indexed chunk
+   count, embedding model, and available PDFs.
+10. Add Docker support after the core CLI and evaluation workflow are stable.
+
+These additions should preserve the current architecture:
+
+```text
+Retrieve -> Check context -> Answer or Fallback
+```
+
+Conversation memory, agent loops, query rewriting, hybrid search, and reranking
+are deliberately outside the initial scope.
+
 ## Privacy and limitations
 
 - Everything under `data/`, except `data/README.md`, is ignored by Git. Secrets,
