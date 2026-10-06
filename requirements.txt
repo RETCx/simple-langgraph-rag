@@ -1,0 +1,20 @@
+pymupdf4llm == 1.28.2
+
+langchain-core == 1.6.3
+langchain-text-splitters == 1.1.2
+langchain-chroma == 1.1.0
+langchain-huggingface == 1.2.2
+
+
+chromadb == 1.5.9
+
+sentence-transformers == 6.0.1
+torch == 2.14.0
+torchvision == 0.29.0
+
+PyYAML == 6.0.3
+
+langgraph >= 0.4
+langchain-openai >= 0.4
+
+python-dotenv >= 1.1

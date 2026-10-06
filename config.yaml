@@ -1,0 +1,10 @@
+paths:
+  pdf_dir: data/pdfs
+  parsed_dir: data/parsed
+  chroma_dir: data/chroma
+
+retrieval:
+  collection_name: document_knowledge_base
+  embedding_model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+  # Chroma distance score: lower is more relevant.
+  max_distance: 0.85

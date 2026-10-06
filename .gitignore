@@ -1,0 +1,47 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+
+# Private, source, and generated data
+/data/**
+!/data/README.md
+/evals/retrieval_cases.py
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Assessment handoff files and local archives
+/WORK_STATUS.md
+/README.case-study.md
+/*.zip
+/*.7z
+/*.rar
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Generated output and logs
+/artifacts/
+/outputs/
+*.log
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
